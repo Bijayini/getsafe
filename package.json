@@ -31,7 +31,10 @@
       "react-app",
       "react-app/jest",
       "eslint:recommended"
-    ]
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": ["error"]
+    }
   },
   "browserslist": {
     "production": [
@@ -46,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "prettier": "^2.2.1"
   },
   "keywords": [],
