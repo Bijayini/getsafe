@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Header } from './Header';
 import { BrowserRouter } from 'react-router-dom';
-import { Pages } from '../../constants';
+import { Pages } from '../../product-config';
 
 describe('Header component', () => {
     it('renders the logo and link to home page', () => {

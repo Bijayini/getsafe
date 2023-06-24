@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ProductIds } from '../../constants';
+import { ProductIds } from '../../product-config';
 import AgeStep from './steps/age';
 import EmailStep from './steps/email';
 import SummaryStep from './steps/summary';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../../components/button';
-import { Pages } from '../../constants';
+import { Pages } from '../../product-config';
 import './home.css';
 
 export const Home = () => {
@@ -9,7 +9,7 @@ export const Home = () => {
             <h2 className="welcome-message">
                 Welcome to Getsafe's Developer Insurance
             </h2>
-            <Button linkTo={Pages.buyInsuranceDev} label="Get started" />
+            <Button linkTo={Pages.buyInsurance.dev} label="Get started" />
         </div>
     );
 };

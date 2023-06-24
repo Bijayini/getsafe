@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Buyflow from '../../pages/buyflow';
 import Home from '../../pages/home';
 import Header from '../header';
-import { ProductIds, Pages } from '../../constants';
+import { ProductIds, Pages } from '../../product-config';
 import './app.css';
 
 export const App = () => (
@@ -13,7 +13,7 @@ export const App = () => (
             <div className="app-content">
                 <Routes>
                     <Route
-                        path={Pages.buyInsuranceDev}
+                        path={Pages.buyInsurance.dev}
                         element={<Buyflow productId={ProductIds.devIns} />}
                     />
                     <Route path={Pages.home} element={<Home />}></Route>

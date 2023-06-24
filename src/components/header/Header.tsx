@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/Logo';
-import { Pages } from '../../constants';
+import { Pages } from '../../product-config';
 import './header.css';
 
 export const Header = () => {
