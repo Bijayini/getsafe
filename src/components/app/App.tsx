@@ -1,35 +1,24 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Buyflow from '../../pages/buyflow';
-import Logo from '../../assets/Logo';
+import Home from '../../pages/home';
+import Header from '../header';
 import { ProductIds, Pages } from '../../constants';
+import './app.css';
 
-export const App = () => {
-    return (
-        <Router>
-            <div className="App">
-                <header className="App-header">
-                    <Logo />
-                </header>
+export const App = () => (
+    <Router>
+        <div className="app">
+            <Header />
+            <div className="app-content">
                 <Routes>
                     <Route
                         path={Pages.buyInsuranceDev}
                         element={<Buyflow productId={ProductIds.devIns} />}
                     />
-                    <Route
-                        path={Pages.home}
-                        element={
-                            <div>
-                                <p>Welcome to Getsafe's Developer Insurance</p>
-                                <Link to={Pages.buyInsuranceDev}>
-                                    Get started!
-                                </Link>
-                            </div>
-                        }
-                    ></Route>
+                    <Route path={Pages.home} element={<Home />}></Route>
                 </Routes>
             </div>
-        </Router>
-    );
-};
+        </div>
+    </Router>
+);

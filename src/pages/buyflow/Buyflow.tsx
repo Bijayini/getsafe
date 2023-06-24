@@ -26,8 +26,10 @@ export const Buyflow: React.FC<BuyflowProps> = (props) => {
         setStep(nextStep);
     };
     return (
-        <>
-            <h4>Buying {PRODUCT_IDS_TO_NAMES[props.productId]}</h4>
+        <div>
+            <h4 className="buy-flow-header">
+                Buying {PRODUCT_IDS_TO_NAMES[props.productId]}
+            </h4>
             {(currentStep === 'email' && (
                 <EmailStep cb={getStepCallback('age')} />
             )) ||
@@ -37,6 +39,6 @@ export const Buyflow: React.FC<BuyflowProps> = (props) => {
                 (currentStep === 'summary' && (
                     <SummaryStep collectedData={collectedData} />
                 ))}
-        </>
+        </div>
     );
 };

@@ -1,0 +1,20 @@
+.input-wrapper {
+    margin-bottom: var(--space-xs);
+    position: relative;
+}
+
+.input-wrapper input {
+    padding: var(--space-xs);
+    border: 1px solid;
+    border-radius: 3px;
+    min-width: 200px;
+}
+
+.input-hint {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    font-size: 14px;
+    color: var(--color-error-text);
+    transform: translateY(-50%);
+}

@@ -1,0 +1,7 @@
+.welcome-message {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 40px;
+    margin-bottom: var(--space-md);
+}

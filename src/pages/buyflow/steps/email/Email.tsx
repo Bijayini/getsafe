@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Input from '../../../../components/input';
 
 interface EmailProps {
     cb: (field: string, value: string) => void;
@@ -9,14 +10,14 @@ export const Email: React.FC<EmailProps> = (props) => {
     return (
         <>
             <div>
-                Email:{' '}
-                <input
+                <Input
                     type="email"
+                    label="Email"
                     onChange={({ target: { value } }) => {
                         setEmail(value);
                     }}
                     value={email}
-                ></input>
+                />
             </div>
             <button onClick={() => props.cb('email', email)}>Next</button>
         </>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Input from '../../../../components/input';
 
 interface AgeProps {
     cb: (field: string, value: number) => void;
@@ -9,14 +10,14 @@ export const Age: React.FC<AgeProps> = (props) => {
     return (
         <>
             <div>
-                Age:{' '}
-                <input
+                <Input
                     type="number"
+                    label="Age"
                     onChange={({ target: { value } }) => {
                         setAge(Number(value));
                     }}
                     value={age}
-                ></input>
+                />
             </div>
             <button onClick={() => props.cb('age', age)}>Next</button>
         </>
