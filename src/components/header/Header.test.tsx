@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Header } from './Header';
 import { BrowserRouter } from 'react-router-dom';
-import { Pages } from '../../product-config';
 
 describe('Header component', () => {
     it('renders the logo and link to home page', () => {
@@ -12,6 +11,6 @@ describe('Header component', () => {
             </BrowserRouter>
         );
         const linkElement = getByRole('link');
-        expect(linkElement.getAttribute('href')).toBe(Pages.home);
+        expect(linkElement.getAttribute('href')).toBe('/');
     });
 });

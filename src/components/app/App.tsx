@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Buyflow from '../../pages/buyflow';
+import Buyflow from '../../pages/buyFlow';
 import Home from '../../pages/home';
 import Header from '../header';
-import { ProductIds, Pages } from '../../product-config';
+import { ProductIds, Products } from '../../product-config';
 import './app.css';
 
 export const App = () => (
@@ -13,10 +13,14 @@ export const App = () => (
             <div className="app-content">
                 <Routes>
                     <Route
-                        path={Pages.buyInsurance.dev}
+                        path={Products[ProductIds.devIns].url}
                         element={<Buyflow productId={ProductIds.devIns} />}
                     />
-                    <Route path={Pages.home} element={<Home />}></Route>
+                    <Route
+                        path={Products[ProductIds.designIns].url}
+                        element={<Buyflow productId={ProductIds.designIns} />}
+                    />
+                    <Route path="/" element={<Home />}></Route>
                 </Routes>
             </div>
         </div>

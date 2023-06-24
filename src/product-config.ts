@@ -1,11 +1,3 @@
-export const Pages = {
-    home: '/',
-    buyInsurance: {
-        dev: '/buy/insurance_dev',
-        design: '/buy/insurance_design',
-    },
-};
-
 export enum ProductIds {
     devIns = 'dev_ins',
     designIns = 'design_ins',

@@ -5,3 +5,27 @@
     line-height: 40px;
     margin-bottom: var(--space-md);
 }
+.instruction {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+}
+
+.insurance-list {
+    list-style-type: none;
+    display: flex;
+    gap: var(--space-md);
+    padding: 0;
+}
+
+a.insurance-link {
+    display: flex;
+    min-height: 200px;
+    min-width: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background: var(--color-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--color-primary);
+}

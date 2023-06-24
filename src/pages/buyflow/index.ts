@@ -1,2 +1,2 @@
-import { Buyflow } from './Buyflow';
-export default Buyflow;
+import { BuyFlow } from './BuyFlow';
+export default BuyFlow;
