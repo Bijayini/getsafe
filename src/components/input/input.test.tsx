@@ -10,7 +10,7 @@ describe('Input component', () => {
         testId: 'some-input',
     };
 
-    it('should render Input correctly with hint', () => {
+    test('should render Input correctly with hint', () => {
         const { getByTestId, getByText } = render(<Input {...props} />);
         const input = getByTestId('some-input');
 
@@ -20,7 +20,7 @@ describe('Input component', () => {
         expect(props.onChange).toHaveBeenCalledTimes(1);
     });
 
-    it('should render Input correctly without hint when hint is undefined in props', () => {
+    test('should render Input correctly without hint when hint is undefined in props', () => {
         const updatedProps = {
             ...props,
             hint: undefined,
@@ -31,6 +31,6 @@ describe('Input component', () => {
         );
 
         expect(queryByText(props.hint)).not.toBeInTheDocument();
-        expect(getByTestId('input')).toBeInTheDocument();
+        expect(getByTestId('input-field')).toBeInTheDocument();
     });
 });

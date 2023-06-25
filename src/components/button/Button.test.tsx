@@ -7,7 +7,7 @@ describe('Button component', () => {
     const props = {
         onClick: jest.fn(),
     };
-    it('renders a button', () => {
+    test('renders a button', () => {
         const { getByText } = render(<Button {...props}>click me</Button>);
 
         const buttonElement = getByText('click me');

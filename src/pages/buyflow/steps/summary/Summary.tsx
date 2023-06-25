@@ -9,13 +9,19 @@ interface SummaryProps {
     collectedData: CollectedData;
 }
 
+const getCapitalizeText = (text: string) =>
+    text.charAt(0).toUpperCase() + text.slice(1);
+
 export const Summary: React.FC<SummaryProps> = ({ collectedData }) => (
     <>
         {collectedData &&
             Object.entries(collectedData).map(([key, value]) => (
-                <div>
-                    {!!value && <span>{key}: </span>}
-                    {!!value && <span>{value}</span>}
+                <div key={key}>
+                    {!!value && (
+                        <span>
+                            {getCapitalizeText(key)}: {value}
+                        </span>
+                    )}
                 </div>
             ))}
         <div>

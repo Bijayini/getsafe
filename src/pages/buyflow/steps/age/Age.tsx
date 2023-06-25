@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Input from '../../../../components/input';
+import StepForm from '../../../../components/stepForm';
 import { StepData } from '../../../../type';
 
 interface AgeProps {
@@ -9,24 +10,20 @@ interface AgeProps {
 export const Age: React.FC<AgeProps> = (props) => {
     const [age, setAge] = useState(0);
     return (
-        <>
-            <div>
-                <Input
-                    type="number"
-                    label="Age"
-                    onChange={({ target: { value } }) => {
-                        setAge(Number(value));
-                    }}
-                    value={age}
-                    hint=">18"
-                />
-            </div>
-            <button
-                onClick={() => props.cb(StepData.AGE, age)}
-                disabled={!(age && age > 18)}
-            >
-                Next
-            </button>
-        </>
+        <StepForm
+            onSubmit={() => props.cb(StepData.AGE, age)}
+            isSubmitDisabled={!(age && age > 18 && age < 100)}
+        >
+            <Input
+                type="number"
+                label="Age"
+                onChange={({ target: { value } }) => {
+                    setAge(Number(value));
+                }}
+                value={age || ''}
+                hint="> 18 & < 100"
+                autoFocus
+            />
+        </StepForm>
     );
 };

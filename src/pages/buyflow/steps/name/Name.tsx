@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import Button from '../../../../components/button';
 import Input from '../../../../components/input';
+import StepForm from '../../../../components/stepForm';
 import { StepData, StepProps } from '../../../../type';
 
 export const Name: React.FC<StepProps> = (props) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     return (
-        <div className="form-container">
+        <StepForm
+            onSubmit={() => props.cb(StepData.NAME, `${firstName} ${lastName}`)}
+            isSubmitDisabled={!(firstName.trim() && lastName.trim())}
+        >
             <Input
                 onChange={({ target: { value } }) => setFirstName(value)}
                 label="First Name"
                 value={firstName}
                 type="text"
+                autoFocus
             />
             <Input
                 onChange={({ target: { value } }) => setLastName(value)}
@@ -20,14 +24,6 @@ export const Name: React.FC<StepProps> = (props) => {
                 value={lastName}
                 type="text"
             />
-            <Button
-                onClick={() =>
-                    props.cb(StepData.NAME, `${firstName} ${lastName}`)
-                }
-                disabled={!(firstName.trim() && lastName.trim())}
-            >
-                Next
-            </Button>
-        </div>
+        </StepForm>
     );
 };

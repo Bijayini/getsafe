@@ -18,7 +18,7 @@ export const Input: FC<Props> = ({
         <label>{label}: </label>
         <input
             type={type || 'text'}
-            data-testid={testId || 'input'}
+            data-testid={testId || 'input-field'}
             {...restProps}
         />
         {!!hint && (

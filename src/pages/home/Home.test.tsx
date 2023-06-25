@@ -4,7 +4,7 @@ import { Products, ProductIds } from '../../product-config';
 import { Home } from './Home';
 
 describe('<Home />', () => {
-    it('should render without throwing error', () => {
+    test('should render without throwing error', () => {
         expect(() =>
             render(
                 <BrowserRouter>
@@ -14,7 +14,7 @@ describe('<Home />', () => {
         ).not.toThrow();
     });
 
-    it('should render link to designer and developer insurance', () => {
+    test('should render link to designer and developer insurance', () => {
         const { getByText } = render(
             <BrowserRouter>
                 <Home />
