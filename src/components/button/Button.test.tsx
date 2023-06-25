@@ -5,25 +5,13 @@ import { Button } from './Button';
 
 describe('Button component', () => {
     const props = {
-        label: 'click me',
         onClick: jest.fn(),
     };
-    it('renders a regular button without link if linkTo is not provided', () => {
-        const { getByText } = render(<Button {...props} />);
+    it('renders a button', () => {
+        const { getByText } = render(<Button {...props}>click me</Button>);
 
-        const buttonElement = getByText(props.label);
+        const buttonElement = getByText('click me');
         fireEvent.click(buttonElement);
-        expect(props.onClick).toHaveBeenCalled();
-    });
-
-    it('renders a button wrapped with a link if linkTo prop is provided', () => {
-        const { getByRole } = render(
-            <BrowserRouter>
-                <Button linkTo="/" {...props} />
-            </BrowserRouter>
-        );
-
-        const linkElement = getByRole('link');
-        expect(linkElement.getAttribute('href')).toBe('/');
+        expect(props.onClick).toHaveBeenCalledTimes(1);
     });
 });

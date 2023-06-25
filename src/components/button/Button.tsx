@@ -1,28 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import './button.css';
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     linkTo?: string;
-    label: string;
+    children: ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({
     linkTo,
-    label,
+    children,
     ...restProps
-}) => {
-    if (linkTo) {
-        return (
-            <Link to={linkTo} {...restProps}>
-                <button className="button">{label}</button>
-            </Link>
-        );
-    }
-
-    return (
-        <button {...restProps} className="button">
-            {label}
-        </button>
-    );
-};
+}) => (
+    <button {...restProps} className="button">
+        {children}
+    </button>
+);
