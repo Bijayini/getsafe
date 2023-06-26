@@ -1,5 +1,5 @@
 export interface StepProps {
-    cb: (field: StepData, value: string | number) => void;
+    onNext: (field: StepData, value: string | number) => void;
 }
 
 export enum StepData {

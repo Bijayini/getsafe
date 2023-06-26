@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Buyflow from '../../pages/buyFlow';
+import Buyflow from '../../pages/insurance';
 import Home from '../../pages/home';
-import Header from '../header';
+import Purchase from '../../pages/purchase';
+import NotFound from '../../pages/not-found';
+import Header from '../../ui-components/header';
 import { ProductIds, Products } from '../../product-config';
 import './app.css';
 
@@ -20,7 +22,12 @@ export const App = () => (
                         path={Products[ProductIds.designIns].url}
                         element={<Buyflow productId={ProductIds.designIns} />}
                     />
+                    <Route
+                        path="/purchased/:productId"
+                        element={<Purchase />}
+                    />
                     <Route path="/" element={<Home />}></Route>
+                    <Route path="*" element={<NotFound />}></Route>
                 </Routes>
             </div>
         </div>

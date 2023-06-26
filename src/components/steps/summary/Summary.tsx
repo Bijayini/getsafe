@@ -1,5 +1,8 @@
 import React from 'react';
-import { StepData } from '../../../../type';
+import { Link } from 'react-router-dom';
+import { StepData } from '../../../type';
+import './summary.css';
+
 interface CollectedData {
     [StepData.EMAIL]: string;
     [StepData.AGE]: number;
@@ -13,7 +16,7 @@ const getCapitalizeText = (text: string) =>
     text.charAt(0).toUpperCase() + text.slice(1);
 
 export const Summary: React.FC<SummaryProps> = ({ collectedData }) => (
-    <>
+    <div className="summary">
         {collectedData &&
             Object.entries(collectedData).map(([key, value]) => (
                 <div key={key}>
@@ -24,8 +27,8 @@ export const Summary: React.FC<SummaryProps> = ({ collectedData }) => (
                     )}
                 </div>
             ))}
-        <div>
-            <a href="/purchased=dev_ins">Purchase</a>
+        <div className="purchase-link">
+            <Link to="/purchased/dev_ins">Purchase</Link>
         </div>
-    </>
+    </div>
 );

@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 describe('<Email/>', () => {
     const props = {
-        cb: jest.fn(),
+        onNext: jest.fn(),
     };
     test('should render Email correctly with disabled button', () => {
         const { getByText } = render(<Email {...props} />);
@@ -31,6 +31,6 @@ describe('<Email/>', () => {
 
         fireEvent.submit(getByTestId('product-form'));
 
-        expect(props.cb).toHaveBeenCalledWith('email', 'sdf@sdf.com');
+        expect(props.onNext).toHaveBeenCalledWith('email', 'sdf@sdf.com');
     });
 });

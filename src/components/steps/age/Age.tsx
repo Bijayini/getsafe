@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-import Input from '../../../../components/input';
-import StepForm from '../../../../components/stepForm';
-import { StepData } from '../../../../type';
+import Input from '../../../ui-components/input';
+import StepForm from '../../step-form';
+import { StepData, StepProps } from '../../../type';
 
-interface AgeProps {
-    cb: (field: string, value: number) => void;
-}
-
-export const Age: React.FC<AgeProps> = (props) => {
+export const Age: React.FC<StepProps> = ({ onNext }) => {
     const [age, setAge] = useState(0);
     return (
         <StepForm
-            onSubmit={() => props.cb(StepData.AGE, age)}
+            onSubmit={() => onNext(StepData.AGE, age)}
             isSubmitDisabled={!(age && age > 18 && age < 100)}
         >
             <Input

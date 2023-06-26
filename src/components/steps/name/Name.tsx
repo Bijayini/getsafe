@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Input from '../../../../components/input';
-import StepForm from '../../../../components/stepForm';
-import { StepData, StepProps } from '../../../../type';
+import Input from '../../../ui-components/input';
+import StepForm from '../../step-form';
+import { StepData, StepProps } from '../../../type';
 
-export const Name: React.FC<StepProps> = (props) => {
+export const Name: React.FC<StepProps> = ({ onNext }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     return (
         <StepForm
-            onSubmit={() => props.cb(StepData.NAME, `${firstName} ${lastName}`)}
+            onSubmit={() => onNext(StepData.NAME, `${firstName} ${lastName}`)}
             isSubmitDisabled={!(firstName.trim() && lastName.trim())}
         >
             <Input

@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 describe('<Age/>', () => {
     const props = {
-        cb: jest.fn(),
+        onNext: jest.fn(),
     };
     test('should render Age correctly with disabled button', () => {
         const { getByText } = render(<Age {...props} />);
@@ -40,6 +40,6 @@ describe('<Age/>', () => {
 
         fireEvent.submit(getByTestId('product-form'));
 
-        expect(props.cb).toHaveBeenCalledWith('age', 20);
+        expect(props.onNext).toHaveBeenCalledWith('age', 20);
     });
 });

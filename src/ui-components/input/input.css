@@ -1,6 +1,7 @@
 .input-wrapper {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
     position: relative;
+    font-size: 1rem;
 }
 
 .input-wrapper input {

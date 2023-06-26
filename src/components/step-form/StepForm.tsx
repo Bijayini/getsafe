@@ -1,5 +1,6 @@
 import React, { FormHTMLAttributes, ReactNode } from 'react';
-import Button from '../button';
+import Button from '../../ui-components/button';
+import './stepForm.css';
 
 interface StepFormProps extends FormHTMLAttributes<HTMLFormElement> {
     children: ReactNode;
@@ -13,8 +14,10 @@ export const StepForm: React.FC<StepFormProps> = ({
 }) => (
     <form {...restProps} data-testid="product-form">
         {children}
-        <Button disabled={isSubmitDisabled} type="submit">
-            Next
-        </Button>
+        <div className="button-container">
+            <Button disabled={isSubmitDisabled} type="submit">
+                Next
+            </Button>
+        </div>
     </form>
 );

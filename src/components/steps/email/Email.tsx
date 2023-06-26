@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import Input from '../../../../components/input';
-import StepForm from '../../../../components/stepForm';
-import { StepData } from '../../../../type';
-import { validateEmail } from '../../../../utils/validateEmail';
+import Input from '../../../ui-components/input';
+import StepForm from '../../step-form';
+import { StepData, StepProps } from '../../../type';
+import { validateEmail } from '../../../utils/validateEmail';
 
-interface EmailProps {
-    cb: (field: string, value: string) => void;
-}
-
-export const Email: React.FC<EmailProps> = (props) => {
+export const Email: React.FC<StepProps> = ({ onNext }) => {
     const [email, setEmail] = useState('');
     return (
         <StepForm
-            onSubmit={() => props.cb(StepData.EMAIL, email)}
+            onSubmit={() => onNext(StepData.EMAIL, email)}
             isSubmitDisabled={!(email && validateEmail(email))}
         >
             <Input

@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 describe('<Name/>', () => {
     const props = {
-        cb: jest.fn(),
+        onNext: jest.fn(),
     };
     test('should render Name correctly wtesth disabled button', () => {
         const { getByText } = render(<Name {...props} />);
@@ -37,6 +37,6 @@ describe('<Name/>', () => {
 
         fireEvent.submit(getByTestId('product-form'));
 
-        expect(props.cb).toHaveBeenCalledWith('name', 'fij sdf');
+        expect(props.onNext).toHaveBeenCalledWith('name', 'fij sdf');
     });
 });
