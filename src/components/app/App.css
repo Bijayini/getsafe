@@ -1,0 +1,13 @@
+.app-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-md);
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: var(--max-width)) {
+    .app-content {
+        padding: var(--space-md) 0;
+    }
+}

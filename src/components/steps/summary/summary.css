@@ -1,0 +1,7 @@
+.summary {
+    font-size: 1rem;
+}
+
+.purchase-link {
+    margin-top: var(--space-md);
+}
