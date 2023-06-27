@@ -1,7 +1,7 @@
 import { Age } from './Age';
 import { fireEvent, render } from '@testing-library/react';
 
-describe('<Age/>', () => {
+describe('Age', () => {
     const props = {
         onNext: jest.fn(),
     };

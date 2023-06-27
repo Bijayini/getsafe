@@ -1,6 +1,6 @@
 import React, { FormHTMLAttributes, ReactNode } from 'react';
 import Button from '../../ui-components/button';
-import './stepForm.css';
+import './step-form.css';
 
 interface StepFormProps extends FormHTMLAttributes<HTMLFormElement> {
     children: ReactNode;

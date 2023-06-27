@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Button } from './Button';
 
-describe('Button component', () => {
+describe('Button', () => {
     const props = {
         onClick: jest.fn(),
     };

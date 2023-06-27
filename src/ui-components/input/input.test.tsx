@@ -1,7 +1,7 @@
 import { Input } from './Input';
 import { fireEvent, render } from '@testing-library/react';
 
-describe('Input component', () => {
+describe('Input', () => {
     const props = {
         name: 'age',
         label: 'Age',

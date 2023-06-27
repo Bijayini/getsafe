@@ -16,7 +16,7 @@ export const Purchase = () => {
                 You have successfully purchased{' '}
                 <b>{Products[productId].name}</b>! 🎉🎉
             </p>
-            <Link to="/">To the Insurance List</Link>
+            <Link to="/">Visit Insurance List</Link>
         </div>
     );
 };

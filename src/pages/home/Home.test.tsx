@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Products, ProductIds } from '../../product-config';
 import { Home } from './Home';
 
-describe('<Home />', () => {
+describe('Home', () => {
     test('should render without throwing error', () => {
         expect(() =>
             render(

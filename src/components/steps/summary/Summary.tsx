@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { StepData } from '../../../type';
+import { ProductIds } from '../../../product-config';
 import './summary.css';
 
 interface CollectedData {
@@ -10,12 +11,16 @@ interface CollectedData {
 }
 interface SummaryProps {
     collectedData: CollectedData;
+    productId: ProductIds;
 }
 
 const getCapitalizeText = (text: string) =>
     text.charAt(0).toUpperCase() + text.slice(1);
 
-export const Summary: React.FC<SummaryProps> = ({ collectedData }) => (
+export const Summary: React.FC<SummaryProps> = ({
+    collectedData,
+    productId,
+}) => (
     <div className="summary">
         {collectedData &&
             Object.entries(collectedData).map(([key, value]) => (
@@ -28,7 +33,7 @@ export const Summary: React.FC<SummaryProps> = ({ collectedData }) => (
                 </div>
             ))}
         <div className="purchase-link">
-            <Link to="/purchased/dev_ins">Purchase</Link>
+            <Link to={`/purchased/${productId}`}>Purchase</Link>
         </div>
     </div>
 );

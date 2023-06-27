@@ -43,7 +43,10 @@ export const Insurance: React.FC<InsuranceProps> = ({ productId }) => {
             {currentStep === 'email' && <EmailStep onNext={getStepCallback} />}
             {currentStep === 'age' && <AgeStep onNext={getStepCallback} />}
             {currentStep === 'summary' && (
-                <SummaryStep collectedData={collectedData} />
+                <SummaryStep
+                    collectedData={collectedData}
+                    productId={productId}
+                />
             )}
         </div>
     );

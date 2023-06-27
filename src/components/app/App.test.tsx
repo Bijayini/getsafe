@@ -1,10 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { App } from './App';
 import { ProductIds, Products } from '../../product-config';
 
-test('renders list of insurance on home page', () => {
-    const { getByText } = render(<App />);
+test('renders app without any error', () => {
+    const { getByText, container } = render(<App />);
+    expect(() => container).not.toThrow();
 
     const instructionElement = getByText(
         'You can go ahead with below insurances:'

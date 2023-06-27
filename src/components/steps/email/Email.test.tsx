@@ -1,7 +1,7 @@
 import { Email } from './Email';
 import { fireEvent, render } from '@testing-library/react';
 
-describe('<Email/>', () => {
+describe('Email', () => {
     const props = {
         onNext: jest.fn(),
     };
